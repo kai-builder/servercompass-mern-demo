@@ -1,11 +1,37 @@
+# Version control
 .git
 .gitignore
-.github
-node_modules
+
+# Documentation (keep README.md)
+*.md
+!README.md
+
+# Environment files — injected at runtime, never baked into the image
 .env
-.env.local
+.env.*
+
+# Editor/IDE
 .vscode
 .idea
 *.swp
+*.swo
+
+# OS
 .DS_Store
-README.md
+Thumbs.db
+
+# Root node_modules — not used inside the container
+node_modules
+
+# Client artifacts — rebuilt inside Docker from source
+client/node_modules
+client/dist
+client/tsconfig.tsbuildinfo
+
+# Server artifacts
+server/node_modules
+
+# Docker files themselves
+Dockerfile*
+docker-compose*
+.dockerignore
